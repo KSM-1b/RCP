@@ -12,6 +12,7 @@ namespace RCP.DB
         DbSet<Client> Clients { get; set; }
         DbSet<Job> Jobs { get; set; }
         DbSet<Worker> Workers { get; set; }
+        DbSet<Report> Reports { get; set; }
 
         public CommonDbContext(DbContextOptions<CommonDbContext> options) : base(options)
         {
