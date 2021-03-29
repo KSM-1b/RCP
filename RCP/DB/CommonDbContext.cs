@@ -18,5 +18,15 @@ namespace RCP.DB
         {
 
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Report>()
+                .HasOne(r => r.Worker);
+            modelBuilder.Entity<Report>()
+                .HasOne(r => r.Client);
+            modelBuilder.Entity<Worker>()
+                .HasOne(w => w.Job);
+        }
     }
 }
