@@ -1,9 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RCP.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace RCP.DB
 {
@@ -27,6 +23,8 @@ namespace RCP.DB
                 .HasOne(r => r.Client);
             modelBuilder.Entity<Worker>()
                 .HasOne(w => w.Job);
+            modelBuilder.Entity<Worker>()
+                .HasOne(w => w.User);
         }
     }
 }

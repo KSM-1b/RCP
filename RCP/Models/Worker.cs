@@ -13,5 +13,7 @@ namespace RCP.Models
         public string Email { get; set; }
         public Job Job { get; set; }
         public int JobID { get; set; }
+        public User User { get; set; }
+        public string UserID { get; set; }
     }
 }
