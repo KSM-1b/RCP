@@ -1,7 +1,22 @@
+@model User
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Register";
 }
 
-<h2>Index</h2>
+<!-- Formularz rejestracji -->
+<form asp-controller="Register" asp-action="Index" method="post">
+    <div class="form-group">
+        <label class="form-label" asp-for="Email">Email</label>
+        <input class="form-control" asp-for="Email" />
+    </div>
+    <div class="form-group">
+            <label class="form-label" asp-for="Username">Username</label>
+            <input class="form-control" asp-for="Username" />
+        </div>
+    <div class="form-group">
+        <label class="form-label" asp-for="Password">Password</label>
+        <input class="form-control" asp-for="Password" />
+    </div>
+    <button class="btn btn-danger">Send</button>
+</form>
 
-<p>Hello from our Register Template!</p>
