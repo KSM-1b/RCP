@@ -75,6 +75,7 @@ namespace RCP.Migrations
 
             migrationBuilder.DropTable(
                 name: "Jobs");
+            
         }
     }
 }
