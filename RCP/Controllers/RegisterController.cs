@@ -5,9 +5,9 @@ namespace RCP.Controllers
     public class RegisterController : Controller
     {
         // GET
-        public string Index()
+        public IActionResult Index()
         {
-            return "test";
+            return View();
         }
     }
 }
