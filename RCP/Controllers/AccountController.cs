@@ -36,6 +36,13 @@ namespace RCP.Controllers
 
                 var result = await _userManager.CreateAsync(user, model.Password);
 
+                if (result.Succeeded)
+                {
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+
+                    return RedirectToAction("index", "Home");
+                }
+
             }
 
             return View(model);
