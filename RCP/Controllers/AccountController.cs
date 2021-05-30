@@ -1,5 +1,7 @@
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using RCP.ViewModel;
 
 namespace RCP.Controllers
 {
@@ -14,6 +16,22 @@ namespace RCP.Controllers
         {
             _userManager = userManager;
             _signInManager = signInManager;
+        }
+
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                
+            }
+
+            return View(model);
         }
     }
 }
