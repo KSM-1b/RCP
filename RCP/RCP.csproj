@@ -19,4 +19,9 @@
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Login\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Register\Index.cshtml" />
+  </ItemGroup>
+
 </Project>
