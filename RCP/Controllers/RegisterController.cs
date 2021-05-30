@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using RCP.DB;
 
 namespace RCP.Controllers
 {
@@ -7,6 +9,7 @@ namespace RCP.Controllers
         // GET
         public IActionResult Index()
         {
+            _
             return View();
         }
     }
