@@ -43,8 +43,14 @@ namespace RCP.Controllers
                     return RedirectToAction("index", "Home");
                 }
 
+                foreach (var error in result.Errors)
+                {
+                    ModelState.AddModelError("",error.Description);
+                }
+                
+                ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
+                
             }
-
             return View(model);
         }
     }
