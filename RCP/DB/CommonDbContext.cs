@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using RCP.Models;
 
 namespace RCP.DB
 {
-    public class CommonDbContext : DbContext
+    public class CommonDbContext : IdentityDbContext
     {
         DbSet<Client> Clients { get; set; }
         DbSet<Job> Jobs { get; set; }
@@ -20,6 +21,8 @@ namespace RCP.DB
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Report>()
                 .HasOne(r => r.Worker);
             modelBuilder.Entity<Report>()
