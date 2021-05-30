@@ -9,7 +9,7 @@ namespace RCP.Controllers
         // GET
         public IActionResult Index()
         {
-            _
+            
             return View();
         }
     }

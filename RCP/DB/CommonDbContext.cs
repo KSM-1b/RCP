@@ -11,9 +11,11 @@ namespace RCP.DB
         DbSet<Report> Reports { get; set; } 
         DbSet<User> Users { get; set; }
 
+        private readonly DbContextOptions _options;
+
         public CommonDbContext(DbContextOptions<CommonDbContext> options) : base(options)
         {
-
+            _options = options;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
