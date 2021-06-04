@@ -11,6 +11,7 @@ namespace RCP.ViewModel
         [DataType(DataType.Password)]
         public string Password { get; set; }   
         
+        //TODO: Create Cookie, to implement login remember
         [Display(Name = "Remember Me")]   
         public bool RememberMe { get; set; }   
     }

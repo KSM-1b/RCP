@@ -40,8 +40,6 @@ namespace RCP.Controllers
 
                 if (result.Succeeded)
                 {
-                    //await _signInManager.SignInAsync(user, isPersistent: false);
-
                     return RedirectToAction("Login");
                 }
 
