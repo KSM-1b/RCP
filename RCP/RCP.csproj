@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Content\Images" />
+    <None Include="wwwroot\images\RCP.png" />
   </ItemGroup>
 
 </Project>
