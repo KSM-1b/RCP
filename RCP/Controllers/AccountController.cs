@@ -87,7 +87,12 @@ namespace RCP.Controllers
 
             return View(user);
         }
-        
-        
+
+        public async Task<IActionResult> Logout()
+        {
+           
+
+        }
+
     }
 }
