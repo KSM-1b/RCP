@@ -24,4 +24,8 @@
     <_ContentIncludedByDefault Remove="Views\Register\Index.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Content\Images" />
+  </ItemGroup>
+
 </Project>
