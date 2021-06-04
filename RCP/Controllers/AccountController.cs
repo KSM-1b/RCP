@@ -42,7 +42,7 @@ namespace RCP.Controllers
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
 
-                    return RedirectToAction("index", "Home");
+                    return RedirectToAction("Login");
                 }
 
                 foreach (var error in result.Errors)
