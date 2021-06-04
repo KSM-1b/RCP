@@ -50,7 +50,7 @@ namespace RCP.Controllers
                     ModelState.AddModelError("",error.Description);
                 }
                 
-                ModelState.AddModelError(string.Empty, "Invalid Login Attempt");
+                ModelState.AddModelError(string.Empty, "Invalid Register Attempt");
                 
             }
             return View(model);
