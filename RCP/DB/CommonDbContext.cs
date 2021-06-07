@@ -10,7 +10,7 @@ namespace RCP.DB
         DbSet<Job> Jobs { get; set; }
         DbSet<Worker> Workers { get; set; }
         DbSet<Report> Reports { get; set; } 
-        DbSet<User> Users { get; set; }
+        DbSet<AspNetUsers> Users { get; set; }
 
         private readonly DbContextOptions _options;
 
