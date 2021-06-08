@@ -1,4 +1,6 @@
 ﻿
+using Microsoft.AspNetCore.Identity;
+
 namespace RCP.Models
 {
     public class Worker
@@ -9,7 +11,7 @@ namespace RCP.Models
         public string Email { get; set; }
         public Job Job { get; set; }
         public int JobID { get; set; }
-        public AspNetUsers User { get; set; }
+        public IdentityUser User { get; set; }
         public string UserID { get; set; }
     }
 }
