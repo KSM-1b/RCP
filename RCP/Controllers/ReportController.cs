@@ -16,9 +16,11 @@ namespace RCP.Controllers
         }
         
         // GET
-        public Task<IActionResult> Index()
+        public async Task<IActionResult> Index()
         {
-            var commonDbContext = _context.Reports.Include(r => r.Client).Include(r => r.Worker);
+            var commonDbContext = _context.Reports.
+                Include(r => r.Client).
+                Include(r => r.Worker);
             return View(await commonDbContext.ToListAsync());
         }
     }

@@ -1,4 +1,4 @@
-@model TModel
+@model IEnumerable<RCP.Models.Report>
 
 @{
     Layout = null;
@@ -12,7 +12,25 @@
 </head>
 <body>
 <div>
-      
+      @foreach (var item in Model) {
+          <tr>
+              <td>
+                  @Html.DisplayFor(modelItem => item.StartDate)
+              </td>
+              <td>
+                  @Html.DisplayFor(modelItem => item.EndDate)
+              </td>
+              <td>
+                  @Html.DisplayFor(modelItem => item.Description)
+              </td>
+              <td>
+                  @Html.DisplayFor(modelItem => item.Worker.FirstName + item.Worker.LastName)
+              </td>
+              <td>
+                  @Html.DisplayFor(modelItem => item.Client.Name)
+              </td>
+          </tr>
+      }
 </div>
 </body>
 </html>
