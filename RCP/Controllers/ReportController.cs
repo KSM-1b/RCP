@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 namespace RCP.Controllers
@@ -5,9 +6,10 @@ namespace RCP.Controllers
     public class ReportController : Controller
     {
         // GET
-        public IActionResult Index()
+        public Task<IActionResult> Index()
         {
-            return View();
+            var commonDbContext = _context.Reports.Include(r => r.Client).Include(r => r.Worker);
+            return View(await commonDbContext.ToListAsync());
         }
     }
 }
