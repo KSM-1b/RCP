@@ -6,11 +6,10 @@ namespace RCP.DB
 {
     public class CommonDbContext : IdentityDbContext
     {
-        DbSet<Client> Clients { get; set; }
+        public DbSet<Client> Clients { get; set; }
         DbSet<Job> Jobs { get; set; }
-        DbSet<Worker> Workers { get; set; }
-        DbSet<Report> Reports { get; set; } 
-        DbSet<AspNetUsers> Users { get; set; }
+        public DbSet<Worker> Workers { get; set; }
+        public DbSet<Report> Reports { get; set; }
 
         private readonly DbContextOptions _options;
 
@@ -31,6 +30,8 @@ namespace RCP.DB
                 .HasOne(w => w.Job);
             modelBuilder.Entity<Worker>()
                 .HasOne(w => w.User);
+
+
         }
     }
 }
