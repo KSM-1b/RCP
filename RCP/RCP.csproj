@@ -34,4 +34,12 @@
     <None Include="wwwroot\images\RCP.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Reports\Create.cshtml" />
+    <UpToDateCheckInput Remove="Views\Reports\Delete.cshtml" />
+    <UpToDateCheckInput Remove="Views\Reports\Details.cshtml" />
+    <UpToDateCheckInput Remove="Views\Reports\Edit.cshtml" />
+    <UpToDateCheckInput Remove="Views\Reports\Index.cshtml" />
+  </ItemGroup>
+
 </Project>
