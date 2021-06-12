@@ -1,7 +1,11 @@
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RCP.DB;
+using RCP.Models;
+using RCP.ViewModel;
 
 namespace RCP.Controllers
 {
@@ -9,6 +13,7 @@ namespace RCP.Controllers
     {
         
         private readonly CommonDbContext _context;
+        private List<ReportViewModel> _reportViewModel;
 
         public ReportController(CommonDbContext context)
         {
@@ -16,12 +21,20 @@ namespace RCP.Controllers
         }
         
         // GET
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var commonDbContext = _context.Reports.
-                Include(r => r.Client).
-                Include(r => r.Worker);
-            return View(await commonDbContext.ToListAsync());
+            List<Report> reportList = _context.Reports.ToList();
+
+            
+            List<ReportViewModel> reportViewModelsList = reportList.Select(x => new ReportViewModel
+            {
+                Description = x.Description,
+                //ClientName = x.Client.Name,
+                StartDate = x.StartDate,
+            }).ToList();
+            
+            
+            return View(reportViewModelsList);
         }
     }
 }
