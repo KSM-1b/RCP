@@ -1,8 +1,4 @@
-@model IEnumerable<RCP.Models.Report>
-
-@{
-    Layout = null;
-}
+@model List<RCP.ViewModel.ReportViewModel>
 
 <!DOCTYPE html>
 
@@ -15,20 +11,15 @@
       @foreach (var item in Model) {
           <tr>
               <td>
-                  @Html.DisplayFor(modelItem => item.StartDate)
+                  @item.Description
               </td>
               <td>
-                  @Html.DisplayFor(modelItem => item.EndDate)
+                  @item.StartDate
               </td>
               <td>
-                  @Html.DisplayFor(modelItem => item.Description)
+                  @* @item.ClientName *@
               </td>
-              <td>
-                  @Html.DisplayFor(modelItem => item.Worker.FirstName + item.Worker.LastName)
-              </td>
-              <td>
-                  @Html.DisplayFor(modelItem => item.Client.Name)
-              </td>
+              
           </tr>
       }
 </div>
