@@ -18,20 +18,20 @@ namespace RCP.DB
             _options = options;
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Report>()
-                .HasOne(r => r.Worker);
-            modelBuilder.Entity<Report>()
-                .HasOne(r => r.Client);
-            modelBuilder.Entity<Worker>()
-                .HasOne(w => w.Job);
-            modelBuilder.Entity<Worker>()
-                .HasOne(w => w.User);
-
-
-        }
+        // protected override void OnModelCreating(ModelBuilder modelBuilder)
+        // {
+        //     
+        //     base.OnModelCreating(modelBuilder);
+        //     modelBuilder.Entity<Report>()
+        //         .HasOne(r => r.Worker);
+        //     modelBuilder.Entity<Report>()
+        //         .HasOne(r => r.Client);
+        //     modelBuilder.Entity<Worker>()
+        //         .HasOne(w => w.Job);
+        //     modelBuilder.Entity<Worker>()
+        //         .HasOne(w => w.User);
+        //
+        //
+        // }
     }
 }
