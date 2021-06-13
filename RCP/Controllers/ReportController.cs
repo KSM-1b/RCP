@@ -23,16 +23,20 @@ namespace RCP.Controllers
         // GET
         public IActionResult Index()
         {
-            List<Report> reportList = _context.Reports.ToList();
-
+            List<Report> reportList = _context.Reports
+                .Include(x=>x.Client)
+                .Include(y=>y.Worker)
+                .ToList();
+            
             
             List<ReportViewModel> reportViewModelsList = reportList.Select(x => new ReportViewModel
             {
                 Description = x.Description,
                 ClientName = x.Client.Name,
+                WorkerName = x.Worker.FirstName + " " +x.Worker.LastName,
                 StartDate = x.StartDate,
             }).ToList();
-
+            
             
             return View(reportViewModelsList);
         }
