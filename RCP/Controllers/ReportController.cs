@@ -29,10 +29,10 @@ namespace RCP.Controllers
             List<ReportViewModel> reportViewModelsList = reportList.Select(x => new ReportViewModel
             {
                 Description = x.Description,
-                //ClientName = x.Client.Name,
+                ClientName = x.Client.Name,
                 StartDate = x.StartDate,
             }).ToList();
-            
+
             
             return View(reportViewModelsList);
         }

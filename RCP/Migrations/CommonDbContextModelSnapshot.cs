@@ -262,7 +262,7 @@ namespace RCP.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int>("ClientID")
+                    b.Property<int?>("ClientID")
                         .HasColumnType("integer");
 
                     b.Property<string>("Description")
@@ -274,7 +274,7 @@ namespace RCP.Migrations
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<int>("WorkerID")
+                    b.Property<int?>("WorkerID")
                         .HasColumnType("integer");
 
                     b.HasKey("ID");
@@ -372,15 +372,11 @@ namespace RCP.Migrations
                 {
                     b.HasOne("RCP.Models.Client", "Client")
                         .WithMany()
-                        .HasForeignKey("ClientID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ClientID");
 
                     b.HasOne("RCP.Models.Worker", "Worker")
                         .WithMany()
-                        .HasForeignKey("WorkerID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("WorkerID");
 
                     b.Navigation("Client");
 

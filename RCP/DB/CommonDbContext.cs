@@ -7,7 +7,7 @@ namespace RCP.DB
     public class CommonDbContext : IdentityDbContext
     {
         public DbSet<Client> Clients { get; set; }
-        DbSet<Job> Jobs { get; set; }
+        public DbSet<Job> Jobs { get; set; }
         public DbSet<Worker> Workers { get; set; }
         public DbSet<Report> Reports { get; set; }
 
