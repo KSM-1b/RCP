@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RCP.Models
 {
@@ -8,9 +9,11 @@ namespace RCP.Models
         public string Description { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public int WorkerID { get; set; }
+        
         public Worker Worker { get; set; }
-        public int ClientID { get; set; }
+        public int WorkerID { get; set; }
+        
         public Client Client { get; set; }
+        public int ClientID { get; set; }
     }
 }

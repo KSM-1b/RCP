@@ -7,7 +7,7 @@ namespace RCP.DB
     public class CommonDbContext : IdentityDbContext
     {
         public DbSet<Client> Clients { get; set; }
-        DbSet<Job> Jobs { get; set; }
+        public DbSet<Job> Jobs { get; set; }
         public DbSet<Worker> Workers { get; set; }
         public DbSet<Report> Reports { get; set; }
 
@@ -18,20 +18,20 @@ namespace RCP.DB
             _options = options;
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Report>()
-                .HasOne(r => r.Worker);
-            modelBuilder.Entity<Report>()
-                .HasOne(r => r.Client);
-            modelBuilder.Entity<Worker>()
-                .HasOne(w => w.Job);
-            modelBuilder.Entity<Worker>()
-                .HasOne(w => w.User);
-
-
-        }
+        // protected override void OnModelCreating(ModelBuilder modelBuilder)
+        // {
+        //     
+        //     base.OnModelCreating(modelBuilder);
+        //     modelBuilder.Entity<Report>()
+        //         .HasOne(r => r.Worker);
+        //     modelBuilder.Entity<Report>()
+        //         .HasOne(r => r.Client);
+        //     modelBuilder.Entity<Worker>()
+        //         .HasOne(w => w.Job);
+        //     modelBuilder.Entity<Worker>()
+        //         .HasOne(w => w.User);
+        //
+        //
+        // }
     }
 }

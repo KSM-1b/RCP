@@ -8,9 +8,8 @@ namespace RCP.ViewModel
         public string Description { get; set; }
         public string ClientName { get; set; }
         public string WorkerName { get; set; }
-        [DataType((DataType.Date))]
         public DateTime StartDate { get; set; }
-        [DataType((DataType.Time))]
-        public DateTime Hours { get; set; }
+        //[DataType((DataType.Time))]
+       // public DateTime Hours { get; set; }
     }
 }
