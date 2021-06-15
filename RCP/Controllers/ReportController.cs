@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -28,14 +29,13 @@ namespace RCP.Controllers
                 .Include(y=>y.Worker)
                 .ToList();
             
-            
             List<ReportViewModel> reportViewModelsList = reportList.Select(x => new ReportViewModel
             {
                 Description = x.Description,
                 ClientName = x.Client.Name,
                 WorkerName = x.Worker.FirstName + " " +x.Worker.LastName,
-                StartDate = x.StartDate.Date,
-                ManHours = x.StartDate.TimeOfDay,
+                StartDate = x.StartDate.Date.ToString("dd/MM/yyyy"),
+                ManHours = ((x.EndDate).Subtract(x.StartDate).TotalMinutes),
                 Representant = x.Client.Representant,
                 ReportID = x.ID
             }).ToList();
