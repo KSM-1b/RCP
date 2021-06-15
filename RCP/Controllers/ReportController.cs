@@ -51,5 +51,9 @@ namespace RCP.Controllers
         {
             return View();
         }
+        public IActionResult Delete()
+        {
+            return View();
+        }
     }
 }
