@@ -11,5 +11,6 @@ namespace RCP.ViewModel
         public DateTime StartDate { get; set; }
         public TimeSpan ManHours { get; set; }
         public string Representant { get; set; }
+        public int ReportID { get; set; }
     }
 }
