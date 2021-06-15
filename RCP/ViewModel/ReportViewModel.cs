@@ -9,7 +9,7 @@ namespace RCP.ViewModel
         public string ClientName { get; set; }
         public string WorkerName { get; set; }
         public DateTime StartDate { get; set; }
-        //[DataType((DataType.Time))]
-       // public DateTime Hours { get; set; }
+        public TimeSpan ManHours { get; set; }
+        public string Representant { get; set; }
     }
 }
