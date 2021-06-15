@@ -1,30 +1,58 @@
 @model List<RCP.ViewModel.ReportViewModel>
 
-<!DOCTYPE html>
-
 <html>
-<head>
-    <title>title</title>
-</head>
-<body>
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Start date
+        </th>
+        <th>
+            Spent hours
+        </th>
+        <th>
+            Completed by
+        </th>
+        <th>
+            Report
+        </th>
+        <th>
+            Client
+        </th>
+        <th>
+            Company Representant
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    
+</table>
+
 <div>
-      @foreach (var item in Model) {
-          <tr>
-              <td>
-                  @item.Description
-              </td>
-                <td>
-                    @item.StartDate
-                </td>
-              <td>
-                  @item.ClientName
-              </td>
-              <td>
-                  @item.WorkerName
-              </td>
-               <br>
-          </tr>
-      }
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Description
+            </td>
+            <td>
+                @item.StartDate
+            </td>
+            <td>
+                @item.ClientName
+            </td>
+            <td>
+                @item.WorkerName
+            </td>
+
+            <td>
+                @item.ManHours
+            </td>
+            <br>
+        </tr>
+    }
 </div>
 </body>
 </html>
