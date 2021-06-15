@@ -3,11 +3,11 @@
 <html>
 
 
-<table class="table w-auto small table-striped table-hover">
+<table class="table w-auto small table-striped table-hover table-bordered table-re">
     <thead class="thead-dark">
     <tr>
         <th>
-            Start date
+            Date
         </th>
         <th>
             Spent hours
@@ -31,6 +31,7 @@
     <tbody>
     @foreach (var item in Model)
     {
+        <div>
         <tr>
             <td>
                 @item.StartDate
@@ -41,7 +42,7 @@
             <td>
                 @item.WorkerName
             </td>
-            <td>
+            <td class="col-md-4">
                 @item.Description
             </td>
             <td>
@@ -56,6 +57,7 @@
                 <a asp-action="Delete" asp-route-id="@item.ReportID">Delete</a>
             </td>
         </tr>
+        </div>
     }
     </tbody>
 </table>
