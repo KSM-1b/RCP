@@ -28,31 +28,30 @@
     </tr>
     </thead>
     
-</table>
-
-<div>
+    <tbody>
     @foreach (var item in Model)
     {
         <tr>
             <td>
-                @item.Description
+                @item.StartDate
             </td>
             <td>
-                @item.StartDate
+                @item.ManHours
+            </td>
+            <td>
+                @item.WorkerName
+            </td>
+            <td>
+                @item.Description
             </td>
             <td>
                 @item.ClientName
             </td>
             <td>
-                @item.WorkerName
+                @item.Representant
             </td>
-
-            <td>
-                @item.ManHours
-            </td>
-            <br>
+            
         </tr>
     }
-</div>
-</body>
-</html>
+    </tbody>
+</table>
