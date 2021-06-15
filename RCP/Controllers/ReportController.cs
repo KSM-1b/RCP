@@ -40,8 +40,13 @@ namespace RCP.Controllers
                 ReportID = x.ID
             }).ToList();
             
-            
             return View(reportViewModelsList);
         }
+
+        public IActionResult Edit()
+        {
+            return View();
+        }
+        
     }
 }
