@@ -47,6 +47,9 @@ namespace RCP.Controllers
         {
             return View();
         }
-        
+        public IActionResult Details()
+        {
+            return View();
+        }
     }
 }
