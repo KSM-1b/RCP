@@ -36,7 +36,8 @@ namespace RCP.Controllers
                 WorkerName = x.Worker.FirstName + " " +x.Worker.LastName,
                 StartDate = x.StartDate.Date,
                 ManHours = x.StartDate.TimeOfDay,
-                Representant = x.Client.Representant
+                Representant = x.Client.Representant,
+                ReportID = x.ID
             }).ToList();
             
             
