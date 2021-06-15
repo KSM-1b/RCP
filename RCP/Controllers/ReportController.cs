@@ -34,7 +34,8 @@ namespace RCP.Controllers
                 Description = x.Description,
                 ClientName = x.Client.Name,
                 WorkerName = x.Worker.FirstName + " " +x.Worker.LastName,
-                StartDate = x.StartDate,
+                StartDate = x.StartDate.Date,
+                Time = x.StartDate.TimeOfDay
             }).ToList();
             
             
