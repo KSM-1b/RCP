@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RCP.DB;
+using RCP.Helpers;
 using RCP.Models;
 using RCP.ViewModel;
 
@@ -28,6 +29,8 @@ namespace RCP.Controllers
                 .Include(x=>x.Client)
                 .Include(y=>y.Worker)
                 .ToList();
+
+            var manHours = new ManHours();
             
             List<ReportViewModel> reportViewModelsList = reportList.Select(x => new ReportViewModel
             {
@@ -35,7 +38,7 @@ namespace RCP.Controllers
                 ClientName = x.Client.Name,
                 WorkerName = x.Worker.FirstName + " " +x.Worker.LastName,
                 StartDate = x.StartDate.Date.ToString("dd/MM/yyyy"),
-                ManHours = ((x.EndDate).Subtract(x.StartDate).TotalMinutes)/60,
+                ManHours = manHours.GetManHours(x.StartDate,x.EndDate),
                 Representant = x.Client.Representant,
                 ReportID = x.ID
             }).ToList();
