@@ -21,7 +21,11 @@ namespace RCP.Controllers
         {
             _context = context;
         }
-        
+
+        public ReportController()
+        {
+        }
+
         // GET
         public async Task<IActionResult> Index()
         {
