@@ -52,7 +52,7 @@ namespace RCP
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Report}/{action=Index}/{id?}");
             });
         }
     }

@@ -42,4 +42,8 @@
     <UpToDateCheckInput Remove="Views\Reports\Index.cshtml" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Helpers" />
+  </ItemGroup>
+
 </Project>

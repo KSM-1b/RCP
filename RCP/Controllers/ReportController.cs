@@ -22,7 +22,7 @@ namespace RCP.Controllers
         }
         
         // GET
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             List<Report> reportList = _context.Reports
                 .Include(x=>x.Client)
@@ -35,7 +35,7 @@ namespace RCP.Controllers
                 ClientName = x.Client.Name,
                 WorkerName = x.Worker.FirstName + " " +x.Worker.LastName,
                 StartDate = x.StartDate.Date.ToString("dd/MM/yyyy"),
-                ManHours = ((x.EndDate).Subtract(x.StartDate).TotalMinutes),
+                ManHours = ((x.EndDate).Subtract(x.StartDate).TotalMinutes)/60,
                 Representant = x.Client.Representant,
                 ReportID = x.ID
             }).ToList();
