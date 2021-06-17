@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using RCP.DB;
 using RCP.Helpers;
 using RCP.Models;
@@ -16,14 +17,10 @@ namespace RCP.Controllers
         
         private readonly CommonDbContext _context;
         private List<ReportViewModel> _reportViewModel;
-
+        
         public ReportController(CommonDbContext context)
         {
             _context = context;
-        }
-
-        public ReportController()
-        {
         }
 
         // GET
