@@ -1,30 +1,63 @@
 @model List<RCP.ViewModel.ReportViewModel>
 
-<!DOCTYPE html>
-
 <html>
-<head>
-    <title>title</title>
-</head>
-<body>
-<div>
-      @foreach (var item in Model) {
-          <tr>
-              <td>
-                  @item.Description
-              </td>
-                <td>
-                    @item.StartDate
-                </td>
-              <td>
-                  @item.ClientName
-              </td>
-              <td>
-                  @item.WorkerName
-              </td>
-               <br>
-          </tr>
-      }
-</div>
-</body>
-</html>
+
+
+<table class="table w-auto small table-striped table-hover table-bordered table-re">
+    <thead class="thead-dark">
+    <tr>
+        <th>
+            Date
+        </th>
+        <th>
+            Spent hours
+        </th>
+        <th>
+            Completed by
+        </th>
+        <th>
+            Report
+        </th>
+        <th>
+            Client
+        </th>
+        <th>
+            Client Representant
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <div>
+        <tr>
+            <td>
+                @item.StartDate
+            </td>
+            <td>
+                @item.ManHours
+            </td>
+            <td>
+                @item.WorkerName
+            </td>
+            <td class="col-md-4">
+                @item.Description
+            </td>
+            <td>
+                @item.ClientName
+            </td>
+            <td>
+                @item.Representant
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ReportID">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.ReportID">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.ReportID">Delete</a>
+            </td>
+        </tr>
+        </div>
+    }
+    </tbody>
+</table>
