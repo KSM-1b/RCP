@@ -11,7 +11,7 @@ namespace RCP.Tests
         public void Index_ReturnsNotNull()
         {
             //Arrange
-            ReportController controller = new ReportController();
+            ReportController controller = new ReportController(null);
             
             //Action
             Task<IActionResult> result = controller.Index();
