@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc;
 
 namespace RCP.ViewModel
 {
@@ -12,5 +13,8 @@ namespace RCP.ViewModel
         public double ManHours { get; set; }
         public string Representant { get; set; }
         public int ReportID { get; set; }
+        
+        [BindProperty, DataType("month")] 
+        public DateTime Month { get; set; }
     }
 }
