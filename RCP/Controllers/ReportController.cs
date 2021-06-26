@@ -47,8 +47,10 @@ namespace RCP.Controllers
             return View(reportViewModelsList);
         }
 
-        public IActionResult Edit()
+        public async Task<IActionResult> Edit(int id)
         {
+            var data = await _context.Reports.FirstOrDefaultAsync(x => x.ID == id);
+
             return View();
         }
         public IActionResult Details()
