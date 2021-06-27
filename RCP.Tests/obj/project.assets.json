@@ -5317,32 +5317,34 @@
     ]
   },
   "packageFolders": {
-    "/Users/dom/.nuget/packages/": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/dom/Documents/RCP/RCP.Tests/RCP.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\repos\\RCP\\RCP.Tests\\RCP.Tests.csproj",
       "projectName": "RCP.Tests",
-      "projectPath": "/Users/dom/Documents/RCP/RCP.Tests/RCP.Tests.csproj",
-      "packagesPath": "/Users/dom/.nuget/packages/",
-      "outputPath": "/Users/dom/Documents/RCP/RCP.Tests/obj/",
+      "projectPath": "C:\\Users\\user\\source\\repos\\RCP\\RCP.Tests\\RCP.Tests.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\source\\repos\\RCP\\RCP.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/dom/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/Users/dom/Documents/RCP/RCP/RCP.csproj": {
-              "projectPath": "/Users/dom/Documents/RCP/RCP/RCP.csproj"
+            "C:\\Users\\user\\source\\repos\\RCP\\RCP\\RCP.csproj": {
+              "projectPath": "C:\\Users\\user\\source\\repos\\RCP\\RCP\\RCP.csproj"
             }
           }
         }
@@ -5381,14 +5383,11 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
