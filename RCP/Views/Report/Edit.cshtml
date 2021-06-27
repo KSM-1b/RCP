@@ -3,3 +3,22 @@
 @{
     ViewData["Title"] = "Edycja pracownika";
 }
+
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="ReportID">
+
+    <div class="form-group">
+        <label asp-for="Description" class="form-label"></label>
+        <input asp-for="Description" class="form-control">
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="WorkerName" class="form-label"></label>
+        <input asp-for="WorkerName" class="form-control">
+        <span asp-validation-for="WorkerName" class="text-danger"></span>
+    </div>
+
+    <a asp-action="Index" class="btn btn-secondary">Powrót</a>
+    <button class="btn btn-primary">Zapisz</button>
+</form>
