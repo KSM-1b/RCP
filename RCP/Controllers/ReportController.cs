@@ -77,10 +77,17 @@ namespace RCP.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit()
+        public async Task<IActionResult> Edit(ReportViewModel report)
         {
             if (!ModelState.IsValid)
-                return RedirectToAction("Index");
+                return View(report);
+
+            var data = await _context.Reports.Where(x => x.ID == report.ReportID).FirstOrDefaultAsync();
+
+            data.Description = report.Description;
+            data.StartDate = Convert.ToDateTime(report.StartDate);
+
+            await _context.SaveChangesAsync();
 
             return RedirectToAction("Index");
         }
