@@ -41,8 +41,10 @@ namespace RCP.Controllers
             {
                 Description = x.Description,
                 ClientName = x.Client.Name,
-                WorkerName = x.Worker.FirstName + " " + x.Worker.LastName,
-                StartDate = x.StartDate.Date.ToString("dd/MM/yyyy"),
+                FirstName = x.Worker.FirstName,
+                LastName = x.Worker.LastName,
+                StartDate = x.StartDate.Date,
+                EndDate = x.EndDate.Date,
                 ManHours = manHours.GetManHours(x.StartDate, x.EndDate),
                 Representant = x.Client.Representant,
                 ReportID = x.ID
@@ -59,6 +61,7 @@ namespace RCP.Controllers
         }
 
         // GET
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             return View(await ConvertedReports());
@@ -85,7 +88,15 @@ namespace RCP.Controllers
             var data = await _context.Reports.Where(x => x.ID == report.ReportID).FirstOrDefaultAsync();
 
             data.Description = report.Description;
-            data.StartDate = Convert.ToDateTime(report.StartDate);
+            data.StartDate = report.StartDate;
+            if (data.EndDate > data.StartDate)
+            {
+                data.EndDate = report.EndDate;
+            }
+            else
+            {
+                return View(report);
+            }
 
             await _context.SaveChangesAsync();
 
