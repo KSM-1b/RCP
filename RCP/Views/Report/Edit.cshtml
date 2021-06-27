@@ -6,37 +6,37 @@
 
 
 <form asp-action="Edit" method="post">
-    <input type="hidden" asp-for="ReportID">
+    <input type="hidden" asp-for="Report.ID">
 
     <div class="form-group">
-        <label asp-for="Description" class="form-label"></label>
-        <input asp-for="Description" class="form-control">
-        <span asp-validation-for="Description" class="text-danger"></span>
+        <label asp-for="Report.Description" class="form-label"></label>
+        <input asp-for="Report.Description" class="form-control">
+        <span asp-validation-for="Report.Description" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="FirstName" class="form-label"></label>
-        <input asp-for="FirstName" class="form-control">
-        <span asp-validation-for="FirstName" class="text-danger"></span>
+        <label asp-for="Report.Worker.FirstName" class="form-label"></label>
+        <input asp-for="Report.Worker.FirstName" class="form-control">
+        <span asp-validation-for="Report.Worker.FirstName" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="LastName" class="form-label"></label>
-        <input asp-for="LastName" class="form-control">
-        <span asp-validation-for="LastName" class="text-danger"></span>
+        <label asp-for="Report.Worker.LastName" class="form-label"></label>
+        <input asp-for="Report.Worker.LastName" class="form-control">
+        <span asp-validation-for="Report.Worker.LastName" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="StartDate" class="form-label"></label>
-        <input asp-for="StartDate" class="form-control">
-        <span asp-validation-for="StartDate" class="text-danger"></span>
+        <label asp-for="Report.StartDate" class="form-label"></label>
+        <input asp-for="Report.StartDate" class="form-control">
+        <span asp-validation-for="Report.StartDate" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="EndDate" class="form-label"></label>
-        <input asp-for="EndDate" class="form-control">
-        <span asp-validation-for="EndDate" class="text-danger"></span>
+        <label asp-for="Report.EndDate" class="form-label"></label>
+        <input asp-for="Report.EndDate" class="form-control">
+        <span asp-validation-for="Report.EndDate" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="Representant" class="form-label"></label>
-        <input asp-for="Representant" class="form-control">
-        <span asp-validation-for="Representant" class="text-danger"></span>
+        <label asp-for="Report.Client.Representant" class="form-label"></label>
+        <input asp-for="Report.Client.Representant" class="form-control">
+        <span asp-validation-for="Report.Client.Representant" class="text-danger"></span>
     </div>
 
 

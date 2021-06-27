@@ -34,22 +34,22 @@
         <div>
             <tr>
                 <td>
-                    @item.StartDate.ToShortDateString()
+                    @item.Report.StartDate.ToShortDateString()
                 </td>
                 <td>
                     @item.ManHours
                 </td>
                 <td>
-                    @item.FirstName @item.LastName
+                    @item.Report.Worker.FirstName @item.Report.Worker.LastName
                 </td>
                 <td class="col-md-4">
-                    @item.Description
+                    @item.Report.Description
                 </td>
                 <td>
-                    @item.ClientName
+                    @item.Report.Client.Name
                 </td>
                 <td>
-                    @item.Representant
+                    @item.Report.Client.Representant
                 </td>
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.ReportID">Edit | </a>

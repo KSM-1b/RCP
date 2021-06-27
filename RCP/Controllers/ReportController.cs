@@ -37,17 +37,11 @@ namespace RCP.Controllers
             List<Report> reports = await GetReports();
             var manHours = new ManHours();
 
-            List<ReportViewModel> vmreports = reports.Select(x => new ReportViewModel
+            List<ReportViewModel> vmreports = reports.Select(report => new ReportViewModel
             {
-                Description = x.Description,
-                ClientName = x.Client.Name,
-                FirstName = x.Worker.FirstName,
-                LastName = x.Worker.LastName,
-                StartDate = x.StartDate.Date,
-                EndDate = x.EndDate.Date,
-                ManHours = manHours.GetManHours(x.StartDate, x.EndDate),
-                Representant = x.Client.Representant,
-                ReportID = x.ID
+                Report = report,
+                ManHours = manHours.GetManHours(report.StartDate, report.EndDate),
+                ReportID = report.ID
             }).ToList();
 
             return vmreports;
@@ -71,7 +65,7 @@ namespace RCP.Controllers
         {
             var data = await ConvertedReports();
 
-            return View(data.Where(x => x.ReportID == id).FirstOrDefault());
+            return View(data.Where(x => x.Report.ID == id).FirstOrDefault());
         }
 
         public IActionResult Details(int id)
@@ -80,22 +74,22 @@ namespace RCP.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(ReportViewModel report)
+        public async Task<IActionResult> Edit(ReportViewModel reportvm)
         {
             if (!ModelState.IsValid)
-                return View(report);
+                return View(reportvm);
 
-            var data = await _context.Reports.Where(x => x.ID == report.ReportID).FirstOrDefaultAsync();
+            var data = await _context.Reports.Where(x => x.ID == reportvm.Report.ID).FirstOrDefaultAsync();
 
-            data.Description = report.Description;
-            data.StartDate = report.StartDate;
+            data.Description = reportvm.Report.Description;
+            data.StartDate = reportvm.Report.StartDate;
             if (data.EndDate > data.StartDate)
             {
-                data.EndDate = report.EndDate;
+                data.EndDate = reportvm.Report.EndDate;
             }
             else
             {
-                return View(report);
+                return View(reportvm);
             }
 
             await _context.SaveChangesAsync();
