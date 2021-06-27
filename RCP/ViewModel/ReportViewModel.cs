@@ -9,6 +9,5 @@ namespace RCP.ViewModel
     {
         public Report Report { get; set; }
         public double ManHours { get; set; }
-        public int ReportID { get; set; }
     }
 }

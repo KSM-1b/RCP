@@ -41,7 +41,6 @@ namespace RCP.Controllers
             {
                 Report = report,
                 ManHours = manHours.GetManHours(report.StartDate, report.EndDate),
-                ReportID = report.ID
             }).ToList();
 
             return vmreports;
@@ -51,7 +50,7 @@ namespace RCP.Controllers
         {
             var reports = await ConvertedReports();
 
-            return reports.Where(x => x.ReportID == id).FirstOrDefault();
+            return reports.Where(x => x.Report.ID == id).FirstOrDefault();
         }
 
         // GET
