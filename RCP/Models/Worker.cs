@@ -13,13 +13,10 @@ namespace RCP.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        
         public Job Job { get; set; }
         public int JobID { get; set; }
-        
         public IdentityUser User { get; set; }
         public string UserID { get; set; }
-
         private ICollection<Report> Reports { get; set; }
     }
 }

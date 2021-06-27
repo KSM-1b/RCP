@@ -3,3 +3,43 @@
 @{
     ViewData["Title"] = "Edycja pracownika";
 }
+
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="ReportID">
+
+    <div class="form-group">
+        <label asp-for="Description" class="form-label"></label>
+        <input asp-for="Description" class="form-control">
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FirstName" class="form-label"></label>
+        <input asp-for="FirstName" class="form-control">
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName" class="form-label"></label>
+        <input asp-for="LastName" class="form-control">
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="StartDate" class="form-label"></label>
+        <input asp-for="StartDate" class="form-control">
+        <span asp-validation-for="StartDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EndDate" class="form-label"></label>
+        <input asp-for="EndDate" class="form-control">
+        <span asp-validation-for="EndDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Representant" class="form-label"></label>
+        <input asp-for="Representant" class="form-control">
+        <span asp-validation-for="Representant" class="text-danger"></span>
+    </div>
+
+
+    <a asp-action="Index" class="btn btn-secondary">Powrót</a>
+    <button class="btn btn-primary">Zapisz</button>
+</form>
