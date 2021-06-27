@@ -34,13 +34,13 @@
         <div>
             <tr>
                 <td>
-                    @item.StartDate
+                    @item.StartDate.ToShortDateString()
                 </td>
                 <td>
                     @item.ManHours
                 </td>
                 <td>
-                    @item.WorkerName
+                    @item.FirstName @item.LastName
                 </td>
                 <td class="col-md-4">
                     @item.Description
