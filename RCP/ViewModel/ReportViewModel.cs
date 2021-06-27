@@ -8,13 +8,12 @@ namespace RCP.ViewModel
     {
         public string Description { get; set; }
         public string ClientName { get; set; }
-        public string WorkerName { get; set; }
-        public string StartDate { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
         public double ManHours { get; set; }
         public string Representant { get; set; }
         public int ReportID { get; set; }
-        
-        [BindProperty, DataType("month")] 
-        public DateTime Month { get; set; }
     }
 }
