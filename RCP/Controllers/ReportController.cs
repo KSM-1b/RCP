@@ -51,6 +51,13 @@ namespace RCP.Controllers
             return vmreports;
         }
 
+        private async Task<ReportViewModel> ConvertedReport(int id)
+        {
+            var reports = await ConvertedReports();
+
+            return reports.Where(x => x.ReportID == id).FirstOrDefault();
+        }
+
         // GET
         public async Task<IActionResult> Index()
         {
@@ -64,9 +71,18 @@ namespace RCP.Controllers
             return View(data.Where(x => x.ReportID == id).FirstOrDefault());
         }
 
-        public IActionResult Details()
+        public IActionResult Details(int id)
         {
-            return View();
+            return View(ConvertedReport(id));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit()
+        {
+            if (!ModelState.IsValid)
+                return RedirectToAction("Index");
+
+            return RedirectToAction("Index");
         }
 
         public IActionResult Delete()
