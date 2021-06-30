@@ -1,47 +1,46 @@
 ﻿@model RCP.ViewModel.ReportViewModel
 @{
-    ViewData["Title"] = "Create Report";
+    ViewData["Title"] = "Tworzenie Raportu";
 }
 
 <h1>Tworzenie Raportu</h1>
 
-<div class="row">
-    <div class="col-md-12">
-        <form method="post">
-            <div class="text-danger"></div>
+        <form asp-action="Create" method="post">
+            <input type ="hidden" asp-for="Report.ID" />
+
             <div class="form-group">
-                <label for="workerid" class="form-label">ID pracownika</label>
-                <input class="form-control">
+                <label asp-for="workerid" class="form-label">ID pracownika</label>
+                <input asp-for="workderid" asp-class="form-control">
                 <span class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label for="clientname" class="form-label">Klient</label>
-                <input class="form-control" />
+                <label asp-for="clientname"  class="form-label">Klient</label>
+                <input asp-class="clientname"class="form-control" />
                 <span class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label for="description" class="form-label">Opis</label>
-                <input class="form-control" />
+                <label asp-for="description" class ="form-label">Opis</label>
+                <input asp-class="description class = "form-control" />
                 <span class="text-danger"></span>
             </div>
 
             <div class="form-group">
-                <label for="startdate" class="form-label">Rozpoczęcie prac</label>
-                <input class="form-control" />
+                <label asp-for="startdate" class="form-label">Rozpoczęcie prac</label>
+                <input asp-class="startdate" class="form-control" />
                 <span class="text-danger"></span> // lista rozwijana 
             </div>
 
             <div class="form-group">
-                <label for="enddate" class="form-label">Zakończenie prac</label>
-                <input class="form-control" />
+                <label asp-for="enddate" class="form-label">Zakończenie prac</label>
+                <input asp-class="enddate" class="form-control" />
                 <span class="text-danger"></span> //lista roziwjana 
             </div>
 
             <div class="form-group">
-                <label for="representant" class="form-label">Przedstawiciel</label>
-                <input class="form-control" />
+                <label asp-for="representant" class="form-label">Przedstawiciel</label>
+                <input asp-class="representant" class="form-control" />
                 <span class="text-danger"></span>
             </div>
 
@@ -55,5 +54,4 @@
 
 
 
-    </div>
-</div>
+    
