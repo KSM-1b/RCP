@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using RCP.DB;
@@ -37,17 +38,10 @@ namespace RCP.Controllers
             List<Report> reports = await GetReports();
             var manHours = new ManHours();
 
-            List<ReportViewModel> vmreports = reports.Select(x => new ReportViewModel
+            List<ReportViewModel> vmreports = reports.Select(report => new ReportViewModel
             {
-                Description = x.Description,
-                ClientName = x.Client.Name,
-                FirstName = x.Worker.FirstName,
-                LastName = x.Worker.LastName,
-                StartDate = x.StartDate.Date,
-                EndDate = x.EndDate.Date,
-                ManHours = manHours.GetManHours(x.StartDate, x.EndDate),
-                Representant = x.Client.Representant,
-                ReportID = x.ID
+                Report = report,
+                ManHours = manHours.GetManHours(report.StartDate, report.EndDate),
             }).ToList();
 
             return vmreports;
@@ -57,7 +51,7 @@ namespace RCP.Controllers
         {
             var reports = await ConvertedReports();
 
-            return reports.Where(x => x.ReportID == id).FirstOrDefault();
+            return reports.Where(x => x.Report.ID == id).FirstOrDefault();
         }
 
         // GET
@@ -67,36 +61,81 @@ namespace RCP.Controllers
             return View(await ConvertedReports());
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Create()
+        {
+            IEnumerable<Client> clients = await _context.Clients.ToListAsync();
+            IEnumerable<Worker> workers = await _context.Workers.ToListAsync();
+            
+            ViewBag.ClientEnums = (clients.Select(x => new SelectListItem()
+            {
+                Text = x.Name,
+                Value = x.ID.ToString()
+            }));
+
+            ViewBag.WorkerEnums = (workers.Select(x => new SelectListItem()
+            {
+                Text = x.FirstName,
+                Value = x.ID.ToString()
+            }));
+
+            var ReportViewModel = new ReportViewModel();
+            return View();
+        }
+
         public async Task<IActionResult> Edit(int id)
         {
             var data = await ConvertedReports();
 
-            return View(data.Where(x => x.ReportID == id).FirstOrDefault());
+            return View(data.Where(x => x.Report.ID == id).FirstOrDefault());
         }
 
-        public IActionResult Details(int id)
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
         {
-            return View(ConvertedReport(id));
+            return View(await ConvertedReport(id));
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(ReportViewModel report)
+        public async Task<IActionResult> Create(CreateReportViewModel reportvm)
         {
             if (!ModelState.IsValid)
-                return View(report);
+                return View(reportvm);
 
-            var data = await _context.Reports.Where(x => x.ID == report.ReportID).FirstOrDefaultAsync();
+            _context.Reports.Add(new Report
+            {
+                Description = reportvm.ReportViewModel.Report.Description,
+                Worker = await _context.Workers.Where(x => x.ID == reportvm.ReportViewModel.Report.WorkerID).FirstOrDefaultAsync(),
+                Client = await _context.Clients.Where(x => x.ID == reportvm.ReportViewModel.Report.ClientID).FirstOrDefaultAsync(),
+                StartDate = reportvm.ReportViewModel.Report.StartDate,
+                EndDate = reportvm.ReportViewModel.Report.EndDate
+            });
 
-            data.Description = report.Description;
-            data.StartDate = report.StartDate;
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(ReportViewModel reportvm)
+        {
+            if (!ModelState.IsValid)
+                return View(reportvm);
+
+            var reports = await GetReports();
+
+            var data = reports.Where(x => x.ID == reportvm.Report.ID).FirstOrDefault();
+
+            data.Description = reportvm.Report.Description;
+            data.StartDate = reportvm.Report.StartDate;
             if (data.EndDate > data.StartDate)
-            {
-                data.EndDate = report.EndDate;
-            }
+                data.EndDate = reportvm.Report.EndDate;
             else
-            {
-                return View(report);
-            }
+                return View(reportvm);
+
+            data.Worker.FirstName = reportvm.Report.Worker.FirstName;
+            data.Worker.LastName = reportvm.Report.Worker.LastName;
+            data.Client.Representant = reportvm.Report.Client.Representant;
 
             await _context.SaveChangesAsync();
 

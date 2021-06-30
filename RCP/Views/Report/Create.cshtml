@@ -1,0 +1,44 @@
+﻿@model RCP.ViewModel.CreateReportViewModel
+@{
+    ViewData["Title"] = "Tworzenie Raportu";
+    var a = ViewBag.WorkerEnums;
+    var b = ViewBag.ClientEnums;
+    Console.WriteLine("aaa");
+}
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="ReportViewModel.Report.ClientID" class="form-label">Klient</label>
+        <select asp-for="ReportViewModel.Report.ClientID" asp-items="@ViewBag.ClientEnums" asp-class="form-control"></select>
+        <span asp-validation-for="ReportViewModel.Report.ClientID"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ReportViewModel.Report.WorkerID" class="form-label">Pracownik</label>
+        <select asp-for="ReportViewModel.Report.WorkerID" asp-items="@ViewBag.WorkerEnums" asp-class="form-control"></select>
+        <span asp-validation-for="ReportViewModel.Report.WorkerID"> </span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ReportViewModel.Report.Description" class="form-label">Opis</label>
+        <input asp-for="ReportViewModel.Report.Description" asp-class="ReportViewModel.Report.Description" class="form-control" />
+        <span asp-validation-for="ReportViewModel.Report.Description"> </span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ReportViewModel.Report.StartDate" class="form-label">Rozpoczęcie prac</label>
+        <input asp-for="ReportViewModel.Report.StartDate" asp-class="ReportViewModel.Report.StartDate" class="form-control" />
+        <span asp-validation-for="ReportViewModel.Report.StartDate"> </span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ReportViewModel.Report.EndDate" class="form-label">Zakończenie prac</label>
+        <input asp-for="ReportViewModel.Report.EndDate" asp-class="ReportViewModel.Report.EndDate" class="form-control" />
+        <span asp-validation-for="ReportViewModel.Report.EndDate"> </span>
+    </div>
+
+    <div>
+        <a asp-action="Index" class="btn btn-secondary">Powrót</a>
+        <button class="btn btn-primary">Stwórz</button>
+    </div>
+</form>
