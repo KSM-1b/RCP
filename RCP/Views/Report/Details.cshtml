@@ -1,1 +1,32 @@
-Details
+@model RCP.ViewModel.ReportViewModel
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Report.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Report.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ManHours)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ManHours)
+        </dd>
+        <dt class="col-sm-2">
+            Worker name
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Report.Worker.FirstName) @Html.DisplayFor(model => model.Report.Worker.LastName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Report.Client.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Report.Client.Name)
+        </dd>
+    </dl>
+</div>
