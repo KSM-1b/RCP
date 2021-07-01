@@ -14,7 +14,6 @@ namespace RCP.Models
         public int ERP_ID { get; set; }
         public string Description { get; set; }
         public string Representant { get; set; }
-        
         private ICollection<Report> Reports { get; set; }
     }
 }
