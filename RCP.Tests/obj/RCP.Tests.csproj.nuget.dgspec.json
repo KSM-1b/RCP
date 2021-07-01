@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\repos\\RCP\\RCP.Tests\\RCP.Tests.csproj": {}
+    "C:\\Users\\Gosia\\Desktop\\Projekt\\RCP\\RCP.Tests\\RCP.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\repos\\RCP\\RCP.Tests\\RCP.Tests.csproj": {
+    "C:\\Users\\Gosia\\Desktop\\Projekt\\RCP\\RCP.Tests\\RCP.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\repos\\RCP\\RCP.Tests\\RCP.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\Gosia\\Desktop\\Projekt\\RCP\\RCP.Tests\\RCP.Tests.csproj",
         "projectName": "RCP.Tests",
-        "projectPath": "C:\\Users\\user\\source\\repos\\RCP\\RCP.Tests\\RCP.Tests.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\repos\\RCP\\RCP.Tests\\obj\\",
+        "projectPath": "C:\\Users\\Gosia\\Desktop\\Projekt\\RCP\\RCP.Tests\\RCP.Tests.csproj",
+        "packagesPath": "C:\\Users\\Gosia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gosia\\Desktop\\Projekt\\RCP\\RCP.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gosia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\user\\source\\repos\\RCP\\RCP\\RCP.csproj": {
-                "projectPath": "C:\\Users\\user\\source\\repos\\RCP\\RCP\\RCP.csproj"
+              "C:\\Users\\Gosia\\Desktop\\Projekt\\RCP\\RCP\\RCP.csproj": {
+                "projectPath": "C:\\Users\\Gosia\\Desktop\\Projekt\\RCP\\RCP\\RCP.csproj"
               }
             }
           }
@@ -68,25 +68,28 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\user\\source\\repos\\RCP\\RCP\\RCP.csproj": {
+    "C:\\Users\\Gosia\\Desktop\\Projekt\\RCP\\RCP\\RCP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\repos\\RCP\\RCP\\RCP.csproj",
+        "projectUniqueName": "C:\\Users\\Gosia\\Desktop\\Projekt\\RCP\\RCP\\RCP.csproj",
         "projectName": "RCP",
-        "projectPath": "C:\\Users\\user\\source\\repos\\RCP\\RCP\\RCP.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\repos\\RCP\\RCP\\obj\\",
+        "projectPath": "C:\\Users\\Gosia\\Desktop\\Projekt\\RCP\\RCP\\RCP.csproj",
+        "packagesPath": "C:\\Users\\Gosia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gosia\\Desktop\\Projekt\\RCP\\RCP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Gosia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -163,7 +166,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     }
