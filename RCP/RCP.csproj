@@ -42,10 +42,6 @@
     <UpToDateCheckInput Remove="Views\Reports\Index.cshtml" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Views\Client\" />
-  </ItemGroup>
-
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 </Project>
