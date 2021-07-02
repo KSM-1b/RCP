@@ -1,5 +1,45 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model RCP.ViewModel.CreateClientViewModel
 @{
+    ViewData["Title"] = "Tworzenie nowego klienta";
+    var a = ViewBag.WorkerEnums;
+    var b = ViewBag.ClientEnums;
+    Console.WriteLine("aaa");
 }
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="ClientViewModel.Client.ID" class="form-label">ID Klienta</label>
+        <select asp-for="ClientViewModel.Client.ID" asp-items="@ViewBag.ClientEnums" asp-class="form-control"></select>
+        <span asp-validation-for="ClientViewModel.Client.ID"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ClientViewModel.Client.Name" class="form-label">Imię</label>
+        <select asp-for="ClientViewModel.Client.Name" asp-items="@ViewBag.WorkerEnums" asp-class="form-control"></select>
+        <span asp-validation-for="ClientViewModel.Client.Name"> </span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ClientViewModel.Client.Description" class="form-label">Opis</label>
+        <input asp-for="ClientViewModel.Client.Description" asp-class="ClientViewModel.Client.Description" class="form-control" />
+        <span asp-validation-for="ClientViewModel.Client.Description"> </span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ClientViewModel.Client.ERP_ID" class="form-label">ERP_ID</label>
+        <input asp-for="ClientViewModel.Client.ERP_ID" asp-class="ClientViewModel.Client.ERP_ID" class="form-control" />
+        <span asp-validation-for="ClientViewModel.Client.ERP_ID"> </span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ClientViewModel.Client.Representant" class="form-label">Przedstawiciel</label>
+        <input asp-for="ClientViewModel.Client.Representant" asp-class="ClientViewModel.Client.ERP_ID" class="form-control" />
+        <span asp-validation-for="ClientViewModel.Client.Representant"> </span>
+    </div>
+
+    <div>
+        <a asp-action="Index" class="btn btn-secondary">Powrót</a>
+        <button class="btn btn-primary">Stwórz</button>
+    </div>
+</form>
+
