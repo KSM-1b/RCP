@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RCP.DB;
@@ -20,6 +21,7 @@ namespace RCP.Controllers
             _context = context;
         }
 
+        [Authorize]
         [HttpPost]
         public async  Task<IActionResult> Create(CreateClientViewModel clientvm)
         {
@@ -39,6 +41,7 @@ namespace RCP.Controllers
             return RedirectToAction("Report/Index");
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult Create()
         {

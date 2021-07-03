@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -55,12 +56,14 @@ namespace RCP.Controllers
         }
 
         // GET
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Index()
         {
             return View(await ConvertedReports());
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Create()
         {
@@ -90,12 +93,14 @@ namespace RCP.Controllers
             return View(data.Where(x => x.Report.ID == id).FirstOrDefault());
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
             return View(await ConvertedReport(id));
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Create(CreateReportViewModel reportvm)
         {
@@ -116,6 +121,7 @@ namespace RCP.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Edit(ReportViewModel reportvm)
         {
