@@ -1,22 +1,13 @@
 ﻿@model RCP.ViewModel.CreateClientViewModel
 @{
     ViewData["Title"] = "Tworzenie nowego klienta";
-    var a = ViewBag.WorkerEnums;
-    var b = ViewBag.ClientEnums;
-    Console.WriteLine("aaa");
 }
 
 <form asp-action="Create" method="post">
     <div class="form-group">
-        <label asp-for="ClientViewModel.Client.ID" class="form-label">ID Klienta</label>
-        <select asp-for="ClientViewModel.Client.ID" asp-items="@ViewBag.ClientEnums" asp-class="form-control"></select>
-        <span asp-validation-for="ClientViewModel.Client.ID"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="ClientViewModel.Client.Name" class="form-label">Imię</label>
-        <select asp-for="ClientViewModel.Client.Name" asp-items="@ViewBag.WorkerEnums" asp-class="form-control"></select>
-        <span asp-validation-for="ClientViewModel.Client.Name"> </span>
+        <label asp-for="ClientViewModel.Client.Name" class="form-label">Nazwa klienta</label>
+        <input asp-for="ClientViewModel.Client.Name" asp-class="ClientViewModel.Client.Description" class="form-control" /> 
+        <span asp-validation-for="ClientViewModel.Client.Name"></span>
     </div>
 
     <div class="form-group">
