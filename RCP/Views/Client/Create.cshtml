@@ -1,0 +1,36 @@
+﻿@model RCP.ViewModel.CreateClientViewModel
+@{
+    ViewData["Title"] = "Tworzenie nowego klienta";
+}
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="ClientViewModel.Client.Name" class="form-label">Nazwa klienta</label>
+        <input asp-for="ClientViewModel.Client.Name" asp-class="ClientViewModel.Client.Description" class="form-control" /> 
+        <span asp-validation-for="ClientViewModel.Client.Name"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ClientViewModel.Client.Description" class="form-label">Opis</label>
+        <input asp-for="ClientViewModel.Client.Description" asp-class="ClientViewModel.Client.Description" class="form-control" />
+        <span asp-validation-for="ClientViewModel.Client.Description"> </span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ClientViewModel.Client.ERP_ID" class="form-label">ERP_ID</label>
+        <input asp-for="ClientViewModel.Client.ERP_ID" asp-class="ClientViewModel.Client.ERP_ID" class="form-control" />
+        <span asp-validation-for="ClientViewModel.Client.ERP_ID"> </span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ClientViewModel.Client.Representant" class="form-label">Przedstawiciel</label>
+        <input asp-for="ClientViewModel.Client.Representant" asp-class="ClientViewModel.Client.ERP_ID" class="form-control" />
+        <span asp-validation-for="ClientViewModel.Client.Representant"> </span>
+    </div>
+
+    <div>
+        <a asp-action="Index" class="btn btn-secondary">Powrót</a>
+        <button class="btn btn-primary">Stwórz</button>
+    </div>
+</form>
+

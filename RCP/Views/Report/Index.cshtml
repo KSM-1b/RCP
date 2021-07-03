@@ -29,35 +29,35 @@
     </thead>
     
     <tbody>
-    @foreach (var item in Model)
-    {
-        <div>
-            <tr>
-                <td>
-                    @item.Report.StartDate.ToShortDateString()
-                </td>
-                <td>
-                    @item.ManHours
-                </td>
-                <td>
-                    @item.Report.Worker.FirstName @item.Report.Worker.LastName
-                </td>
-                <td class="col-md-4">
-                    @item.Report.Description
-                </td>
-                <td>
-                    @item.Report.Client.Name
-                </td>
-                <td>
-                    @item.Report.Client.Representant
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Report.ID">Edit | </a>
-                    <a asp-action="Details" asp-route-id="@item.Report.ID">Details | </a>
-                    <a asp-action="Delete" asp-route-id="@item.Report.ID">Delete</a>
-                </td>
-            </tr>
-        </div>
-    }
+        @foreach (var item in Model)
+        {
+            <div>
+                <tr>
+                    <td>
+                        @item.Report.StartDate.ToShortDateString()
+                    </td>
+                    <td>
+                        @item.ManHours
+                    </td>
+                    <td>
+                        @item.Report.Worker.FirstName @item.Report.Worker.LastName
+                    </td>
+                    <td class="col-md-4">
+                        @item.Report.Description
+                    </td>
+                    <td>
+                        @item.Report.Client.Name
+                    </td>
+                    <td>
+                        @item.Report.Client.Representant
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Report.ID">Edit | </a>
+                        <a asp-action="Details" asp-route-id="@item.Report.ID">Details | </a>
+                        <a asp-action="Delete" asp-route-id="@item.Report.ID">Delete</a>
+                    </td>
+                </tr>
+            </div>
+        }
     </tbody>
 </table>
