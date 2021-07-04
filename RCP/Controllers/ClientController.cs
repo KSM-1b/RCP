@@ -38,7 +38,7 @@ namespace RCP.Controllers
 
             await _context.SaveChangesAsync();
 
-            return RedirectToAction("Report/Index");
+            return RedirectToAction("Index","Report");
         }
 
         [Authorize]
